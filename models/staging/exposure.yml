@@ -1,0 +1,26 @@
+
+version: 2
+
+exposures:
+
+  - name: weekly_metrics
+    label: saisri by the Week
+    type: dashboard
+    maturity: high
+    description: 
+     For more exposure about project details
+
+    depends_on:
+      - ref('stg_customer_nation')
+      - ref('stg_customer')
+      - ref('stg_lineitem')
+      - ref('stg_nation')
+      - ref('stg_orders')
+      - source('snowflake_data','RAW_LINEITEM')
+      - source('snowflake_data','RAW_NATION')
+      - source('snowflake_data','RAW_ORDER')
+  
+    owner:
+      name:  saisri
+      email: snowflaketraining01@gmail.com
+
